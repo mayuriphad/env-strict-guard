@@ -1,0 +1,54 @@
+{
+  "name": "env-strict-guard",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Zero-config startup environment variable validator. Prevents production crashes by enforcing required variables and types defined in .env.example before boot.",
+  "author": "Mayuri Phad <mayuriphad656@gmail.com>",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "env-strict-guard": "./bin/cli.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "bin",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "pretest": "npm run build",
+    "test": "node --test test/*.test.js",
+    "prepublishOnly": "npm test"
+  },
+  "keywords": [
+    "env",
+    "dotenv",
+    "validation",
+    "environment-variables",
+    "strict",
+    "startup",
+    "cli",
+    "node",
+    "typescript"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mayuriphad/env-strict-guard.git"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
